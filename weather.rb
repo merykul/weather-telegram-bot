@@ -1,8 +1,10 @@
 require 'rest-client'
+require 'yaml'
 
 class Weather
+  config = YAML.load_file('config.yml')
   API_URL = 'api.openweathermap.org/data/2.5/'.freeze
-  APPID = '7ef41aaf44bd71758c483383190a745c'.freeze
+  APPID = config['appid']
 
   def initialize(city)
     @city = city

@@ -1,8 +1,10 @@
 require 'telegram/bot'
 require_relative 'weather'
+require 'yaml'
 
 class TelegramBot
-  TOKEN = '6383583411:AAGaMjRS31BDvHh-i3FxsSO-Ae9OjcdAnHA'.freeze
+  config = YAML.load_file('config.yml')
+  TOKEN = config['telegram_bot_token']
 
   def run
     bot.listen do |message|
