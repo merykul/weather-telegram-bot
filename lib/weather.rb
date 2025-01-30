@@ -50,5 +50,4 @@ class Weather
     icon = '✨' if icon.nil?
     icon
   end
-
 end
